@@ -1,4 +1,6 @@
 import React from "react";
+import { Search } from "lucide-react";
+
 type Plan = {
   name: string;
   price: string;
@@ -50,8 +52,43 @@ const plans: Plan[] = [
 
 const Pricing: React.FC = () => {
   return (
+    <div className="font-sans w-full">
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-10">
+      {/* 🔹 Navbar */}
+      <div className="flex items-center justify-between px-10 py-4 bg-black text-white w-full sticky top-0 z-50">
+        
+        <a href="/" className="text-xl font-bold tracking-widest hover:text-yellow-400 transition-colors">
+          CIVICTRACK
+        </a>
+
+        <div className="flex gap-8 text-gray-300 font-medium">
+          <a href="/" className="hover:text-white transition-colors">Home</a>
+          <a href="#about" className="hover:text-white transition-colors">About</a>
+          <a href="#features" className="hover:text-white transition-colors">Features</a>
+          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Search className="cursor-pointer text-gray-300 hover:text-white transition-colors" size={20} />
+
+          <button className="bg-yellow-400 text-black hover:bg-yellow-500 px-5 py-2 rounded-full font-semibold transition-colors">
+            See How It Works
+          </button>
+        </div>
+      </div>
+
+      {/* 🔹 Hero Section */}
+      <div className="bg-white text-black py-32 px-10 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-6xl font-bold mb-6 leading-tight">
+            Track Civic Progress{" "}
+            <span className="text-yellow-400">Effectively</span>
+          </h1>
+        </div>
+      </div>
+
+      {/* 🔹 Pricing Section */}
+      <div id="pricing" className="bg-gray-100 flex items-center justify-center p-10">
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan) => (
             <div
@@ -90,6 +127,8 @@ const Pricing: React.FC = () => {
           ))}
         </div>
       </div>
+
+    </div>
   );
 };
 
