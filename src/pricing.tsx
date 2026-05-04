@@ -1,6 +1,6 @@
 import React from "react";
 import { Search } from "lucide-react";
-
+import {Link} from "react-router-dom";
 type Plan = {
   name: string;
   price: string;
@@ -52,7 +52,7 @@ const plans: Plan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <div className="font-sans w-full">
+    <div className="font-sans w-full min-h-screen">
 
       {/* 🔹 Navbar */}
       <div className="flex items-center justify-between px-10 py-4 bg-black text-white w-full sticky top-0 z-50">
@@ -62,16 +62,16 @@ const Pricing: React.FC = () => {
         </a>
 
         <div className="flex gap-8 text-gray-300 font-medium">
-          <a href="/" className="hover:text-white transition-colors">Home</a>
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#features" className="hover:text-white transition-colors">Features</a>
-          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+          <Link to="/" className="hover:text-white transition-colors">Home</Link>
+          <Link to="#about" className="hover:text-white transition-colors">About</Link>
+          <Link to="#features" className="hover:text-white transition-colors">Features</Link>
+          <Link to="#pricing" className="hover:text-white transition-colors">Pricing</Link>
         </div>
 
         <div className="flex items-center gap-4">
           <Search className="cursor-pointer text-gray-300 hover:text-white transition-colors" size={20} />
 
-          <button className="bg-yellow-400 text-black hover:bg-yellow-500 px-5 py-2 rounded-full font-semibold transition-colors">
+          <button className="bg-yellow-400 text-black hover:bg-yellow-500 px-5 py-2 rounded-full font-semibold transition-colors cursor-pointer">
             See How It Works
           </button>
         </div>
@@ -93,11 +93,11 @@ const Pricing: React.FC = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`p-8 rounded-2xl shadow-md text-center w-80 transition hover:scale-105
+              className={`p-8 rounded-2xl shadow-md text-center w-80 transition
                 ${
                   plan.name === "Professional"
                     ? "bg-white border-2 border-blue-500 scale-105"
-                    : "bg-gray-200"
+                    : "bg-gray-200 hover:scale-105"
                 }`}
             >
               <h2 className="text-2xl font-semibold mb-4">
@@ -120,7 +120,7 @@ const Pricing: React.FC = () => {
                 ))}
               </ul>
 
-              <button className="border border-gray-500 px-6 py-2 rounded-full hover:bg-gray-800 hover:text-white transition">
+              <button className="border border-gray-500 px-6 py-2 rounded-full hover:bg-gray-800 hover:text-white transition cursor-pointer">
                 Contact Sales
               </button>
             </div>

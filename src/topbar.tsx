@@ -13,7 +13,7 @@ function Topbar() {
 
         <div className="flex gap-8 text-gray-300 font-medium">
           <Link to="/" className="cursor-pointer hover:text-white transition-colors">Home</Link>
-          <a href="#about" className="cursor-pointer hover:text-white transition-colors">About</a>
+          <Link to="#about" className="cursor-pointer hover:text-white transition-colors">About</Link>
           <Link to="/features" className="cursor-pointer hover:text-white transition-colors">Features</Link>
           <Link to="/pricing" className="cursor-pointer hover:text-white transition-colors">Pricing</Link>
         </div>
